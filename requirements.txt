@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+tortoise
+tortoise-orm
+aerich
+pydantic
+typing
