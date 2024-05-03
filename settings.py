@@ -6,7 +6,7 @@ ctx.verify_mode = ssl.CERT_NONE
 
 # IP白名单
 origins = [
-    "http://localhost"
+    "http://localhost:5173"
 ]
 
 # TORTOISE_ORM设置
