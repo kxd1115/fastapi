@@ -1,13 +1,3 @@
-import ssl
-
-ctx = ssl.create_default_context()
-ctx.check_hostname = False
-ctx.verify_mode = ssl.CERT_NONE
-
-# IP白名单
-origins = [
-    "http://localhost:5173"
-]
 
 # TORTOISE_ORM设置
 ORM_STUDENT = {
@@ -20,13 +10,12 @@ ORM_STUDENT = {
                 'user': 'postgres',
                 'password': '1217kxd.',
                 'database': 'fastapi',
-                "ssl": ctx
             }
         }
     },
     'apps': {
         "models": {
-          "models": ["models.student", "aerich.models"],
+          "models": ["database.student", "aerich.models"],
           "default_connection": "pg_conn"
           }
         }
@@ -42,13 +31,13 @@ ORM_CRM = {
                 'user': 'postgres',
                 'password': '1217kxd.',
                 'database': 'fastapi',
-                "ssl": ctx
+                'schema': 'crm'
             }
         }
     },
     'apps': {
         "models": {
-          "models": ["models.user", "aerich.models"],
+          "models": ["database.crm", "aerich.models"],
           "default_connection": "pg_conn"
           }
         }

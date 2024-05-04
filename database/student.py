@@ -10,10 +10,10 @@ class Student(Model):
 
     # 一对多关系
     # related_name 反向查询使用
-    clas = fields.ForeignKeyField('models.Clas', description='班级', related_name='students')
+    clas = fields.ForeignKeyField('database.Clas', description='班级', related_name='students')
 
     # 多对多关系
-    courses = fields.ManyToManyField('models.Course', related_name='students')
+    courses = fields.ManyToManyField('database.Course', related_name='students')
 
     # 指定存在的schema
     meta = {
@@ -25,7 +25,7 @@ class Student(Model):
 class Course(Model):
     id = fields.IntField(pk=True)
     name = fields.CharField(max_length=32, description='课程名称')
-    teacher = fields.ForeignKeyField('models.Teacher', description='教师', related_name='courses')
+    teacher = fields.ForeignKeyField('database.Teacher', description='教师', related_name='courses')
     addr = fields.CharField(max_length=32, description='上课地点', default='')
 
     # 指定存在的schema

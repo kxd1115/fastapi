@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from models.student import *
+from database.student import *
 
 studentAPI = APIRouter()
 
